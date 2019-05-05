@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #606060;
+}
+body {
+    margin: 0; 
+}
+
+section {
+    margin: 0 auto;
+    padding: 0em 7em 0em 7em;  /* Aligns sections */
+    /* height: 100vh; try later*/
+}
+
+.container {
+    border: 2px solid black;
+}
+
+/****************************************  NAV BAR   ***************************************************/
+nav {
+    text-align: right;
+    height: 1em; /* Max height of nav bar */
+}
+
+nav a {
+    text-align: right;
+    font-size: 1.25em;
+    display: inline;
+    padding: 0 2rem; /* Creates more spaces */
+    text-decoration: none; /* avoids highligting hypeerlinks */
+    line-height: 1em;
+}
+
+.adelalogonav {
+    height: 3em; /* Max height of logo */
+    width: 3em;
+    border: 2px solid black;
+}
+
+.navbar-custom {
+    border: 2px solid black;
+}
+nav a:hover {
+    color: #94b0b7; /* changes color */
+  }
+
+
+/****************************************  SOCIAL MEDIA BAR  ***************************************************/
+
+.socialmedia-bar {
+    display: flex;
+    justify-content: flex-end;
+    flex-flow: column wrap;
+    align-items: flex-end;
+    height: 100%;
+    height: 100vh;
+    width: 40em;
+    border: 2px solid black;
+    
+    
+}
+
+/****************************************  Big icons  ***************************************************/
+.bigicon {
+    
+}
