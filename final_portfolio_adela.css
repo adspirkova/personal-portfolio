@@ -3,9 +3,9 @@
 }
 html {
     font-family: 'Lato', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     background-color: #ffffff;
-    color: #606060;
+    color: #606060; /* #444444 */;
 }
 body {
     margin: 0; 
@@ -18,33 +18,57 @@ section {
 }
 
 .container {
+    display: flex; /* displays flex */
+    justify-content: space-around;
     border: 2px solid black;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 p {
+    font-size: 0.9em;
+}
+
+h3 {
+    font-weight: 300;
 }
 
 /****************************************  NAV BAR   ***************************************************/
 nav {
     text-align: right;
     height: 1em; /* Max height of nav bar */
-}
+    /* Sticky navbar by position and width (1-2)*/
+    position: fixed; /* (1) */
+    width: 100vw; /* (2) */
+    font-size: 0.9em;
 
+}
 nav a {
-    text-align: right;
     font-size: 1.25em;
-    display: inline;
     padding: 0 2rem; /* Creates more spaces */
-    text-decoration: none; /* avoids highligting hypeerlinks */
+    text-decoration: none; /* avoids highligting hyperlinks */
     line-height: 1em;
+
 }
 
 .adelalogonav {
-    height: 3em; /* Max height of logo */
-    width: 3em;
+    height: 4em; /* Max height of logo */
+    width: 4em;
+    /* Should move logo to the top
+    top: 0;
+    margin: 0;
+    padding: 0; */
     border: 2px solid black;
 }
+ul {
+    list-style-type: none; /* Deletes bulets */
+    display: inline-flex; /* Displays navbar as a row */
+    padding: 0 3em;  /* Moves ul from right side */
+  }
 
-.navbar-custom {
-    border: 2px solid black;
-}
 nav a:hover {
     color: #94b0b7; /* changes color */
   }
@@ -52,20 +76,72 @@ nav a:hover {
 
 /****************************************  SOCIAL MEDIA BAR  ***************************************************/
 
-.socialmedia-bar {
+.socialmedia-banner {
     display: flex;
     justify-content: flex-end;
     flex-flow: column wrap;
     align-items: flex-end;
-    height: 100%;
-    height: 100vh;
-    width: 40em;
-    border: 2px solid black;
-    
-    
+    width: 7em;
+    border: 2px solid violet;
+    /* Sticky banner by position and height (1-2)*/
+    position: fixed; /* (1) */
+    height: 100vh; /* (2) */
+    right: 0; /* Moves it to the right position */
 }
 
-/****************************************  Big icons  ***************************************************/
-.bigicon {
-    
+.socialmedia-bar-img {
+    border: 2px solid pink;
+    height: 60%;
+    width: 50%;
+}
+
+
+/****************************************  Home page  ***************************************************/
+.home {
+    /* Shift content to the bottom (1-2) */
+    display: flex; /* (1) */
+    align-items: center; /* (2) */
+    border: 2px solid pink;
+    height: 100vh;
+    background-image: url('img/lake-3952053_1920.jpg');
+    background-size: cover; /* does not repeat picture */
+    opacity: 0.6;
+    text-align: center;
+  }
+
+.hello {
+    padding: 6em;
+}
+.intro {
+    color: black;
+    font-weight: 400;
+}
+
+.path {
+    background-color: #ffffff;
+    display: flex; /* changes flow */
+    width: 80%;
+}
+
+.pathbox {
+    padding: 0 1rem; /* Creates more spaces */
+    text-align: justify; /* Text to the block */
+}
+
+/****************************************  Skills page  ***************************************************/
+.skills {
+   border: 2px solid blue;
+}
+
+.icon {
+    height: 2em;
+    width: 2em;
+}
+
+
+/****************************************  Rooster  ***************************************************/
+.rooster {
+    border: 2px solid blue;
+    height: 25%;
+    width: 25%;
 }
