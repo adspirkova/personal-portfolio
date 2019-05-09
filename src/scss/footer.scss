@@ -1,3 +1,5 @@
+@import 'variables.scss';
+
 footer {
     margin: 0 auto;
     padding: 0em 6em 0em 6em; 
@@ -7,6 +9,10 @@ footer {
     align-content: center;
     flex-wrap: wrap;
     max-width:50%;
+
+    @media screen and (max-width: $max-width) {
+        max-width: 100%;
+    }
 
     .adelalogofooter {
         height: 3em; /* Max height of logo */

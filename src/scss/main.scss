@@ -6,6 +6,9 @@
 @import 'aboutme.scss';
 @import 'contact.scss';
 @import 'footer.scss';
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import '../../node_modules/bootstrap/scss/_forms.scss';
+@import '../../node_modules/bootstrap/scss/buttons';
 
 
 
@@ -27,6 +30,11 @@ html {
 
 section {
     padding: 0em 6em 0em 6em;  /* Aligns sections */
+}
+
+.fa {
+    height: 3em;;
+    width: 3em;
 }
 
 

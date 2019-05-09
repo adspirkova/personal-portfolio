@@ -1,0 +1,40 @@
+@import 'variables.scss';
+
+.contactmecontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .contactmebanner {
+        display:flex;
+        justify-content: space-evenly;
+
+        @media screen and (max-width:$max-width) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .contactmeform_container {
+        display: flex;
+        justify-content: space-evenly;
+        align-content: space-between;
+
+        .form-group{
+            padding: 0.5em;
+            line-height: 3em;
+        }
+
+        .sendmessagebutton {
+            display: flex;
+            justify-content: center;
+        }
+
+    }
+}
+

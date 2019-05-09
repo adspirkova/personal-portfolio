@@ -1,11 +1,14 @@
+@import 'variables.scss';
+
 .portfolio {
     background-color: #f7f6f6;
     .portfolioview {
         flex-direction: column;
         justify-content: center;
         flex-wrap: wrap;
+        border: 2px solid salmon;
 
-        .grids{
+        .grids_4{
             margin: 1em auto;
             padding: 1em;
 
@@ -15,11 +18,15 @@
                 justify-content: center;
                 align-items: center;
                 flex-wrap: wrap;
+                border: 2px solid yellow;
 
-                @media screen and (max-width:$max-width){
+                @media screen and (max-width:760px){
                     flex-direction: column;
+                    justify-content: flex-start;
                     align-items: center;
+                    height: 100%;
                 }
+                
 
                 .portfoliobox {
                     background-color: white;
@@ -27,6 +34,8 @@
                     padding: 2em;
                     width: 20em;
                     height: 20em;
+                    border: 2px solid orange;
+
                 }
 
                 .rightline {
