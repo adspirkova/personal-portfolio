@@ -4,41 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="final_portfolio_adela.css">
+
+        <!-- Bootstrap for progress bar -->
+
+
+    <link rel="stylesheet" href="css/main.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i" rel="stylesheet">
     <title>Adela Portfolio Page</title>
     <link rel="icon" href="img/favicon2.png"  type="image/gif" sizes="32x32">
+
+
+
 </head>
 
 <body>
     <header> <!--  NAV BAR here -->
-        <nav class="navbar">
-            <div class="navbar-custom">
-                <ul>
-                    <img class="adelalogonav" src="img/logo.png" alt="adelalogo">
-                    <!-- Replace "a" with "li" -->
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#aboutme">About me</a></li>
-                    <li><a href="#contact">Contact</a></li>
-
-                </ul>
-
+        <div>
+            <nav class="navbar">
+                <div class="navbar-custom">
+                    <ul>
+                        <img class="adelalogonav" src="img/logo.png" alt="adelalogo">
+                        <!-- List -->
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#aboutme">About me</a></li>
+                        <li><a href="#contact">Contact</a></li>
+    
+                    </ul>
+    
+                </div>
+            </nav>
+    
+            <!-- Social media bar -->
+            <div class="socialmedia-banner">
+                <div class="socialmedia-bar">
+                    <a href="https://github.com/adspirkova"><img class="socialmedia-bar-img" src="img/logo/github-sign.png" alt="github_icon_bar"></a>
+                </div>
+    
+                <div class="socialmedia-bar">
+                    <a href="https://www.linkedin.com/in/adela-spirkova/"><img class="socialmedia-bar-img"  src="img/logo/linkedin-sign.png" alt="linkedin_icon_bar"></a>
+                </div>
+    
             </div>
-        </nav>
-
-        <!-- Social media bar -->
-        <div class="socialmedia-banner">
-            <div class="socialmedia-bar">
-                <a href="https://github.com/adspirkova"><img class="socialmedia-bar-img" src="img/logo/github-sign.png" alt="github_icon_bar"></a>
-            </div>
-
-            <div class="socialmedia-bar">
-                <a href="https://www.linkedin.com/in/adela-spirkova/"><img class="socialmedia-bar-img"  src="img/logo/linkedin-sign.png" alt="linkedin_icon_bar"></a>
-            </div>
-
         </div>
     </header>
 
@@ -98,40 +107,39 @@
         <!-- Bio section -->
         <div class="container aboutcontent">
             <div class="container bio">
+                <div class="biotext">
                     <h2>Hi, I'm Adela Spirkova</h2>
-
+    
                     <p>I am a starting web developer from Prague, Czech republic. I create beautiful professional websites using best practice accessibility. I enjoy turning complex problems into simple, beautiful and intuitive interface designs.</p>
+                </div>
                     
-                    <!-- Contact details -->
-                    <div class="contactdetails">
-                        <div class="email">
-                            <img class="icon" src="img/icons/email.png" alt="emailsmallicon">
-                            <h4>
-                                Email:
-                            </h4>
-                            <p>ad.spirkova@gmail.com</p>
-                        </div>
-
-                        <div class="location">
-                            <img class="icon" src="img/icons/location.png" alt="locationsmallicon">
-                                <h4>
-                                    Location:
-                                </h4>
-                                <p>Prague, Czech republic</p>
+                        <!-- Contact details -->
+                        <div class="contactdetails">
+                            <div class="detail1">
+                                    <img class="icon" src="img/icons/email.png" alt="emailsmallicon">
+                                    <h4>
+                                        Email:
+                                    </h4>
+                                    <p>ad.spirkova@gmail.com</p>
                             </div>
-                        
-                            <!-- Social media icons  -->
-                        <div class="socialmediaicons">
-                            <a href="https://www.linkedin.com/in/adela-spirkova/"><img class="icon" src="img/logo/linkedin.png" alt="linkedin_icon"></a>
-                            <a href="https://github.com/adspirkova"><img class="icon" src="img/logo/github-logo.png" alt="github_icon"></a>
-
+    
+                            <div class="detail1">
+                                    <img class="icon" src="img/icons/location.png" alt="locationsmallicon">
+                                        <h4>
+                                            Location:
+                                        </h4>
+                                        <p>Prague, Czech republic</p>
+                            </div>
+                        </div>  
+                         <!-- Social media icons  -->
+                         <div class="socialmediaicons">
+                                <a href="https://www.linkedin.com/in/adela-spirkova/"><img class="icon" src="img/logo/linkedin.png" alt="linkedin_icon"></a>
+                                <a href="https://github.com/adspirkova"><img class="icon" src="img/logo/github-logo.png" alt="github_icon"></a>
+                            </div>
+    
                         </div>
 
                         <!-- Update a footer with these -->
-
-                    </div>
-            </div>
-            
 
             <!-- Progress bars -->
             <div class="container progressbar">
@@ -139,13 +147,9 @@
                     <div class="progressbar-text">
                         <p>HTML5, CSS3</p>
                     </div>
-
                     <div class="progressbar-score">
-                            <span class="progressbar-score-text">98%</span>
-                        </div>
-                    <div class="progressbar-score-data" data-percent="98"> 
+                        <span class="progressbar-score-text" style="width: 98%">98%</span>
                     </div>
-
                 </div>
 
                 <div class="progressbarline">
@@ -154,12 +158,9 @@
                         </div>
     
                         <div class="progressbar-score">
-                                <span class="progressbar-score-text">70%</span>
-                            </div>
-                        <div class="progressbar-score-data" data-percent="70">
+                            <span class="progressbar-score-text" style="width: 70%">70%</span>
                         </div>
-    
-                    </div>
+                </div>
                 
                 <div class="progressbarline">
                         <div class="progressbar-text">
@@ -167,12 +168,10 @@
                         </div>
     
                         <div class="progressbar-score">
-                                <span class="progressbar-score-text">60%</span>
-                            </div>
-                        <div class="progressbar-score-data" data-percent="60">
+                            <span class="progressbar-score-text" style="width: 60%">60%</span>
                         </div>
     
-                    </div>
+                </div>
 
                 <div class="progressbarline">
                         <div class="progressbar-text">
@@ -180,12 +179,11 @@
                         </div>
     
                         <div class="progressbar-score">
-                                <span class="progressbar-score-text">70%</span>
-                            </div>
-                        <div class="progressbar-score-data" data-percent="70">
+                            <span class="progressbar-score-text" style="width: 70%">70%</span>
                         </div>
     
-                    </div>
+                </div>
+                
                 
                 <div class="progressbarline">
                         <div class="progressbar-text">
@@ -193,12 +191,10 @@
                         </div>
     
                         <div class="progressbar-score">
-                                <span class="progressbar-score-text">60%</span>
-                            </div>
-                        <div class="progressbar-score-data" data-percent="60">
+                            <span class="progressbar-score-text" style="width: 60%">60%</span>
                         </div>
     
-                    </div>
+                </div>
 
                 <div class="progressbarline">
                         <div class="progressbar-text">
@@ -206,12 +202,10 @@
                         </div>
     
                         <div class="progressbar-score">
-                                <span class="progressbar-score-text">63%</span>
-                            </div>
-                        <div class="progressbar-score-data" data-percent="63">
+                            <span class="progressbar-score-text" style="width: 63%">63%</span>
                         </div>
     
-                    </div>
+                </div>
 
                 <div class="progressbarline">
                         <div class="progressbar-text">
@@ -219,12 +213,10 @@
                         </div>
     
                         <div class="progressbar-score">
-                                <span class="progressbar-score-text">50%</span>
-                            </div>
-                        <div class="progressbar-score-data" data-percent="50">
+                            <span class="progressbar-score-text" style="width: 50%">50%</span>
                         </div>
     
-                    </div>
+                </div>
     
     
 
@@ -241,96 +233,103 @@
 
         </div>
 
-
+        <!-- First row -->
         <div class="container portfolioview">
-            <div class="portfoliobox">
-                <div class="portfolioimage">
-                    <input type="image" src="img/FAVICON(1).png" alt="portfolioimage1">
+            <div class="grids">
+                <div class="portfolioflex bottomline">
+                    <div class="portfoliobox rightline">
+                        <div class="portfolioimage">
+                            <input type="image" src="img/FAVICON(1).png" alt="portfolioimage1">
+                        </div>
+                        <div class="portfoliodescription">
+                            <p>Description of hackathon project #1.</p>
+                            <p>Description of hackathon project #1.</p>
+                            <p>Description of hackathon project #1.</p>
+                        </div>
+                        <div class="portfolioname">
+                            <h5>Tech stack</h5>
+                        </div>
+        
+                    </div>
+        
+                    <div class="portfoliobox rightline">
+                        <div class="portfolioimage">
+                            <input type="image" src="img/FAVICON(1).png" alt="portfolioimage2">
+                        </div>
+                        <div class="portfoliodescription">
+                            <p>Description of hackathon project #2.</p>
+                            <p>Description of hackathon project #2.</p>
+                            <p>Description of hackathon project #2.</p>
+                        </div>
+                        <div class="portfolioname">
+                            <h5>Tech stack</h5>
+                        </div>
+        
+                    </div>
+        
+                    <div class="portfoliobox">
+                        <div class="portfolioimage">
+                            <input type="image" src="img/FAVICON(1).png" alt="portfolioimage3">
+                        </div>
+                        <div class="portfoliodescription">
+                            <p>Description of hackathon project #3.</p>
+                            <p>Description of hackathon project #3.</p>
+                            <p>Description of hackathon project #3.</p>
+                        </div>
+                        <div class="portfolioname">
+                            <h5>Tech stack</h5>
+                        </div>
+        
+                    </div>
                 </div>
-                <div class="portfoliodescription">
-                    <p>Description of hackathon project #1.</p>
-                    <p>Description of hackathon project #1.</p>
-                    <p>Description of hackathon project #1.</p>
+                
+                <!-- Second row -->
+                <div class="portfolioflex">
+                    <div class="portfoliobox rightline">
+                        <div class="portfolioimage">
+                            <input type="image" src="img/FAVICON(1).png" alt="portfolioimage4">
+                        </div>
+                        <div class="portfoliodescription">
+                            <p>Description of hackathon project #4.</p>
+                            <p>Description of hackathon project #4.</p>
+                            <p>Description of hackathon project #4.</p>
+                        </div>
+                        <div class="portfolioname">
+                            <h5>Tech stack</h5>
+                        </div>
+        
+                    </div>
+        
+                    <div class="portfoliobox rightline">
+                        <div class="portfolioimage">
+                            <input type="image" src="img/FAVICON(1).png" alt="portfolioimage5">
+                        </div>
+                        <div class="portfoliodescription">
+                            <p>Description of hackathon project #5.</p>
+                            <p>Description of hackathon project #5.</p>
+                            <p>Description of hackathon project #5.</p>
+                        </div>
+                        <div class="portfolioname">
+                            <h5>Tech stack</h5>
+                        </div>
+        
+                    </div>
+        
+                    <div class="portfoliobox">
+                        <div class="portfolioimage">
+                            <input type="image" src="img/FAVICON(1).png" alt="portfolioimage6">
+                        </div>
+                        <div class="portfoliodescription">
+                            <p>Description of hackathon project #6.</p>
+                            <p>Description of hackathon project #6.</p>
+                            <p>Description of hackathon project #6.</p>
+                        </div>
+                        <div class="portfolioproject">
+                            <button id="Explorebutton">Explore</button>
+                        </div>
+        
+                    </div>
                 </div>
-                <div class="portfolioname">
-                    <h5>Tech stack</h5>
-                </div>
-
-            </div>
-
-            <div class="portfoliobox">
-                <div class="portfolioimage">
-                    <input type="image" src="img/FAVICON(1).png" alt="portfolioimage2">
-                </div>
-                <div class="portfoliodescription">
-                    <p>Description of hackathon project #2.</p>
-                    <p>Description of hackathon project #2.</p>
-                    <p>Description of hackathon project #2.</p>
-                </div>
-                <div class="portfolioname">
-                    <h5>Tech stack</h5>
-                </div>
-
-            </div>
-
-            <div class="portfoliobox">
-                <div class="portfolioimage">
-                    <input type="image" src="img/FAVICON(1).png" alt="portfolioimage3">
-                </div>
-                <div class="portfoliodescription">
-                    <p>Description of hackathon project #3.</p>
-                    <p>Description of hackathon project #3.</p>
-                    <p>Description of hackathon project #3.</p>
-                </div>
-                <div class="portfolioname">
-                    <h5>Tech stack</h5>
-                </div>
-
-            </div>
-
-            <div class="portfoliobox">
-                <div class="portfolioimage">
-                    <input type="image" src="img/FAVICON(1).png" alt="portfolioimage4">
-                </div>
-                <div class="portfoliodescription">
-                    <p>Description of hackathon project #4.</p>
-                    <p>Description of hackathon project #4.</p>
-                    <p>Description of hackathon project #4.</p>
-                </div>
-                <div class="portfolioname">
-                    <h5>Tech stack</h5>
-                </div>
-
-            </div>
-
-            <div class="portfoliobox">
-                <div class="portfolioimage">
-                    <input type="image" src="img/FAVICON(1).png" alt="portfolioimage5">
-                </div>
-                <div class="portfoliodescription">
-                    <p>Description of hackathon project #5.</p>
-                    <p>Description of hackathon project #5.</p>
-                    <p>Description of hackathon project #5.</p>
-                </div>
-                <div class="portfolioname">
-                    <h5>Tech stack</h5>
-                </div>
-
-            </div>
-
-            <div class="portfoliobox">
-                <div class="portfolioimage">
-                    <input type="image" src="img/FAVICON(1).png" alt="portfolioimage6">
-                </div>
-                <div class="portfoliodescription">
-                    <p>Description of hackathon project #6.</p>
-                    <p>Description of hackathon project #6.</p>
-                    <p>Description of hackathon project #6.</p>
-                </div>
-                <div class="portfolioproject">
-                    <button id="Explorebutton">Explore</button>
-                </div>
-
             </div>
 
 
@@ -496,10 +495,10 @@
 
         <div class="footercontainer">
             <div class="adelalogofooter">
-            <img src="img/logo.png" alt="adelalogo">
+            <img class="adelalogofooter" src="img/logo.png" alt="adelalogo">
             </div>
             <h2>Find me here</h2>
-            <div class="socialmediaicons ">
+            <div class="socialmediaicons">
                 <a href="https://www.linkedin.com/in/adela-spirkova/"><img src="img/logo/linkedin.png" alt="linkedin_icon"></a>
                 <a href="https://github.com/adspirkova"><img src="img/logo/github-logo.png" alt="github_icon"></a>
 

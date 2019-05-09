@@ -1,0 +1,91 @@
+
+/****************************************  NAV BAR   ***************************************************/
+nav {
+    text-align: right;
+    /* Sticky navbar by position and width (1-2)*/
+    position: fixed; /* (1) */
+    width: 100vw; /* (2) */
+    font-size: 1.25em;
+    padding: 0 1em; /* Creates more spaces */
+    text-decoration: none; /* avoids highligting hyperlinks */
+    line-height: 1em;
+
+    @media screen and (max-width:$max-width){
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin: 0;
+        padding: 0;
+    }
+    ul {
+        list-style-type: none; /* Deletes bulets */
+        display: flex; /* Displays navbar as a row */
+        flex-direction: row;
+        justify-content: flex-end;
+        align-content: space-around;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 0 3em;  /* Moves ul from right side */
+        
+        @media screen and (max-width:$max-width){
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 0;
+            margin:0;
+        }
+        .adelalogonav {
+            max-height: 3em; /* Max height of logo */
+            max-width: 3em;
+            /* Should move logo to the top
+            top: 0;
+            margin: 0;
+            padding: 0; */  
+        }
+
+        a {
+            font-size: 1.25em;
+            padding: 0 1em; /* Creates more spaces */
+            text-decoration: none; /* avoids highligting hyperlinks */
+            line-height: 1em;
+
+            a:hover {
+                color: #94b0b7; /* changes color */
+              }
+        }
+        
+    }
+
+}
+
+
+
+
+/****************************************  SOCIAL MEDIA BAR  ***************************************************/
+
+.socialmedia-banner {
+    display: flex;
+    justify-content: flex-end;
+    flex-flow: column wrap;
+    /* Sticky banner by position and height (1-2)*/
+    position: fixed; /* (1) */
+    min-height: 100vh; /* (2) */
+    right: 0; /* Moves it to the right position */
+    
+    @media screen and (max-width:$max-width){
+        display: none;
+    }
+
+    .socialmedia-bar {
+        padding: 0.5em;
+
+        .socialmedia-bar-img {
+            flex-wrap: wrap;
+            max-height: 3em;;
+            max-width: 3em;
+        }
+        
+    
+    }
+}
+

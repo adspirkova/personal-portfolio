@@ -1,0 +1,50 @@
+.portfolio {
+    background-color: #f7f6f6;
+    .portfolioview {
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .grids{
+            margin: 1em auto;
+            padding: 1em;
+
+            .portfolioflex {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+
+                @media screen and (max-width:$max-width){
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .portfoliobox {
+                    background-color: white;
+                    margin: 1em auto;
+                    padding: 2em;
+                    width: 20em;
+                    height: 20em;
+                }
+
+                .rightline {
+                    border-right: 2px solid gray;
+                    @media screen and (max-width:$max-width) {
+                        display: none;
+                    }
+                }
+            }
+            .bottomline {
+                border-bottom: solid gray;
+
+                @media screen and (max-width:$max-width) {
+                    display: none;
+                }
+            }
+
+        }
+    }
+
+}

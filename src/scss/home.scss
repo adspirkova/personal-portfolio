@@ -1,0 +1,65 @@
+
+/****************************************  Home page  ***************************************************/
+.home {
+    background-image: url('../img/lake-3952053_1920.jpg');
+    background-size: cover; /* does not repeat picture */
+    opacity: 0.6;
+    text-align: center;
+
+    @media screen and (min-width:$min-width) {
+            justify-content: center;
+        }
+    .hello {
+        /* Shift content to the bottom (1-2) */
+        display: flex; /* (1) */
+        justify-content: center;
+        align-content: space-around;
+        align-items: center; /* (2) */
+        flex-wrap: wrap;
+
+        .intro {
+            color: black;
+            font-weight: 400;
+        }
+
+        .path {
+            background-color: #ffffff;
+            display: flex; /* changes flow */
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            border-bottom: 2px solid gray;
+            flex-wrap: wrap;
+
+            @media screen and (min-width:$min-width) {
+                flex-direction: row;
+                align-content: flex-start;
+                flex-wrap: nowrap;
+                padding: 0 3em;
+            }
+
+            @media screen and (max-width:$max-width){
+                flex-wrap: wrap;
+            }
+
+            @media screen and (min-width:$min-width) {
+                padding: 1em 10em;
+            }
+
+            .pathbox {
+                padding: 0 1rem; /* Creates more spaces */
+                text-align: justify; /* Text to the block */
+            }
+        }
+     }
+ }
+
+
+
+
+
+
+
+
+
+
+

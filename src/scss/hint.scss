@@ -1,0 +1,29 @@
+body {
+    margin: 0 auto; 
+    padding: 0;
+}
+
+section {
+    padding: 0em 7em 0em 7em;  /* Aligns sections */
+    /* height: 100vh; try later*/
+}
+
+.container {
+    display: flex; /* displays flex */
+    justify-content: space-around;
+    border: 2px solid black;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 p {
+    font-size: 0.9em;
+}
+
+h3 {
+    font-weight: 300;
+}
+

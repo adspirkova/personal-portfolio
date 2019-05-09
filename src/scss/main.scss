@@ -1,0 +1,41 @@
+@import 'variables.scss';
+@import 'header.scss';
+@import 'home.scss';
+@import 'skills.scss';
+@import 'portfolio.scss';
+@import 'aboutme.scss';
+@import 'contact.scss';
+@import 'footer.scss';
+
+
+
+* {
+    box-sizing: border-box;
+}
+html {
+    font-family: 'Lato', sans-serif;
+    background-color: #ffffff;
+    color: #606060; /* #444444 */;
+    margin: 0 auto;
+    padding: 0;
+}
+.container {
+    display: flex; /* displays flex */
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+section {
+    padding: 0em 6em 0em 6em;  /* Aligns sections */
+}
+
+
+
+
+/****************************************  Rooster  ***************************************************/
+.rooster {
+    border: 2px solid blue;
+    height: 25%;
+    width: 25%;
+    border-radius: 100%;
+}

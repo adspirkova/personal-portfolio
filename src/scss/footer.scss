@@ -1,0 +1,19 @@
+footer {
+    margin: 0 auto;
+    padding: 0em 6em 0em 6em; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    max-width:50%;
+
+    .adelalogofooter {
+        height: 3em; /* Max height of logo */
+        width: 3em;
+    }
+    .socialmediaicons {
+        display: flex;
+    }
+
+}
