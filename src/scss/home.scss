@@ -9,20 +9,22 @@
     @media screen and (min-width:$min-width) {
             justify-content: center;
         }
-    .hello {
+        
+    &__intro {
         /* Shift content to the bottom (1-2) */
         display: flex; /* (1) */
+        flex-direction: column;
         justify-content: center;
         align-content: space-around;
         align-items: center; /* (2) */
         flex-wrap: wrap;
 
-        .intro {
+        &__text {
             color: black;
             font-weight: 400;
         }
 
-        .path {
+        &__path {
             background-color: #ffffff;
             display: flex; /* changes flow */
             flex-wrap: wrap;
@@ -45,7 +47,7 @@
                 padding: 1em 10em;
             }
 
-            .pathbox {
+            &__box {
                 padding: 0 1rem; /* Creates more spaces */
                 text-align: justify; /* Text to the block */
             }

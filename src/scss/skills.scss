@@ -2,7 +2,7 @@
 /****************************************  Skills page  ***************************************************/
 .skills {
 
-    .aboutcontent {
+    &__content {
         display: flex;
         justify-content: space-evenly;
         min-width:50%;
@@ -23,29 +23,32 @@
             padding: 0 10em;
         }
     
-        .bio {
+        &__bio {
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
     
-            .contactdetails {
+            &__contactdetails {
                 display: flex;
                 flex-direction: row;
                 justify-content: flex-start;
                 flex-wrap: wrap;
     
-                .detail1 {
+                &__detail {
                     display: flex;
                     flex-direction: row;
-                    align-content: flex-start;
+                    align-content: flex-end;
                     align-items: center;
-                
+                    
+                    
+                    h4, p {
+                     margin-bottom: 0;
+                     padding: 1em;
+                    }
                 }
-
-    
             }
 
-            .socialmediaicons {
+            &__social {
                 .icon {
                     height: 2em;
                     width: 2em;
@@ -61,16 +64,16 @@
             align-content: space-between;
             min-width: 50%;
     
-            .progressbarline {
+            &__line {
                 border: 1px solid grey;
                 margin: 1.5em;
                 padding: 0.5em;
     
-                .progressbar-text {
+                &__text {
                     width: 85%;
                 }
 
-                .progressbar-score { 
+                &__score { 
                     color:white;
                     height: 2em;  /* Can be anything */
                     width: 100%;
@@ -83,7 +86,7 @@
                     /* Progress bars */
                 }
 
-                .progressbar-score > span {
+                &__score > span {
                     display: block;
                     height: 100%;
                     border-top-right-radius: 8em;

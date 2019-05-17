@@ -1,15 +1,15 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import '../../node_modules/bootstrap/scss/_forms.scss';
+@import '../../node_modules/bootstrap/scss/_buttons.scss';
+
 @import 'variables.scss';
 @import 'header.scss';
 @import 'home.scss';
-@import 'skills.scss';
 @import 'portfolio.scss';
 @import 'aboutme.scss';
 @import 'contact.scss';
 @import 'footer.scss';
-@import "../../node_modules/bootstrap/scss/bootstrap";
-@import '../../node_modules/bootstrap/scss/_forms.scss';
-@import '../../node_modules/bootstrap/scss/buttons';
-
+@import 'skills.scss';
 
 
 * {
@@ -22,6 +22,10 @@ html {
     margin: 0 auto;
     padding: 0;
 }
+
+body {
+    color: #606060;
+}
 .container {
     display: flex; /* displays flex */
     justify-content: space-around;
@@ -30,11 +34,13 @@ html {
 
 section {
     padding: 0em 6em 0em 6em;  /* Aligns sections */
+     @media screen and (max-width:$max-width){
+        padding: 0em 0em;
+    }
 }
 
-.fa {
-    height: 3em;;
-    width: 3em;
+.pagename {
+    padding: 2em;
 }
 
 

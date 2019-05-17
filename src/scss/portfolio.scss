@@ -6,21 +6,22 @@
         flex-direction: column;
         justify-content: center;
         flex-wrap: wrap;
-        border: 2px solid salmon;
+        
 
-        .grids_4{
-            margin: 1em auto;
-            padding: 1em;
+        &__body {
+            margin: 3em auto;
+            padding: 3em;
+            background-color: white;
+            
 
-            .portfolioflex {
+            &__flex {
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
                 flex-wrap: wrap;
-                border: 2px solid yellow;
 
-                @media screen and (max-width:760px){
+                @media screen and (max-width:$max-width){
                     flex-direction: column;
                     justify-content: flex-start;
                     align-items: center;
@@ -28,29 +29,22 @@
                 }
                 
 
-                .portfoliobox {
+                &__box {
                     background-color: white;
                     margin: 1em auto;
                     padding: 2em;
                     width: 20em;
                     height: 20em;
-                    border: 2px solid orange;
 
                 }
 
                 .rightline {
                     border-right: 2px solid gray;
-                    @media screen and (max-width:$max-width) {
-                        display: none;
+                    @media screen and (max-width:$max-max-width) {
+                        border-right: none;
                     }
                 }
-            }
-            .bottomline {
-                border-bottom: solid gray;
 
-                @media screen and (max-width:$max-width) {
-                    display: none;
-                }
             }
 
         }

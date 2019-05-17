@@ -8,6 +8,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const csso = require('gulp-csso');
 const sourcemaps = require('gulp-sourcemaps');
 const fs   = require('fs');
+
  
 // creates default src folder structure
 function createStructure(done) {
@@ -66,6 +67,8 @@ function publishImages(done) {
   return gulp.src('src/img/**/*')
     .pipe(gulp.dest('dist/img'));
 }
+
+
  
 // compile SCSS files
 function compileScss(done) {
