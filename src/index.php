@@ -1,3 +1,9 @@
+<?php
+
+require_once 'php/forms.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -492,7 +498,7 @@
                         </div>
 
                         <div class="button">
-                            <button type="button" class="btn btn-outline-secondary" id="Submitbutton">Submit</button>
+                            <button type="submit" class="btn btn-outline-secondary" id="Submitbutton">Submit</button>
                         </div>
 
                     </div>
