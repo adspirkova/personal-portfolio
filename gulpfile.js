@@ -1,184 +1,112 @@
-var gulp = require('gulp');
-var gutil  = require('gulp-util');
-var argv   = require('minimist')(process.argv);
-var prompt = require('gulp-prompt');
-var rsync  = require('gulp-rsync');
-var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var sourcemaps = require('gulp-sourcemaps');
-var browserSync = require('browser-sync');
-var useref = require('gulp-useref');
-var uglify = require('gulp-uglify');
-var gulpIf = require('gulp-if');
-var cssnano = require('gulp-cssnano');
-var imagemin = require('gulp-imagemin');
-var cache = require('gulp-cache');
-var del = require('del');
-var runSequence = require('run-sequence');
-var connect = require('gulp-connect-php');
-var print = require('gulp-print');
+// load modules
+const gulp = require('gulp');
+const del = require('del');
+const browsersync_server = require('browser-sync').create();
+const htmlmin = require('gulp-htmlmin');
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const csso = require('gulp-csso');
+const sourcemaps = require('gulp-sourcemaps');
+const fs   = require('fs');
 
-// Development Tasks 
-// -----------------
+// creates default src folder structure
+function createStructure(done) {
+    const folders = [
+        'dist',
+        'src',
+        'src',
+        'src/fonts',
+        'src/img',
+        'src/scss',
+    ];
+    const files = [
+        'src/index.html',
+    ];
 
-gulp.task('connect-sync', function() {
-  connect.server({
-  	base: 'app'
-  }, function (){
-    browserSync({
-      injectChanges: true,
-      proxy: '127.0.0.1:8000'
+    folders.forEach(dir => {
+        if(!fs.existsSync(dir)) {
+            fs.mkdirSync(dir);
+            console.log('folder created:', dir);    
+        }   
     });
-  });
 
-  gulp.start('sass');
-  gulp.start('watch');
-
-});
-
-
-gulp.task('sass', function() {
-  return gulp.src('app/scss/**/*.scss') // Gets all files ending with .scss in app/scss and children dirs
-    .pipe(sass()) // Passes it through a gulp-sass
-    .pipe(gulp.dest('app/css')) // Outputs it in the css folder
-    .pipe(browserSync.stream({match: '**/*.css'}));
-});
-
-gulp.task('css', function() {
-  return gulp.src('app/css/**/*.css')
-    .pipe(browserSync.stream({match: '**/*.css'}));
-});
-
-// Watchers
-gulp.task('watch', function() {
-  gulp.watch('app/scss/**/*.scss', ['sass']);
-  gulp.watch('app/css/**/*.css', ['css']);
-  gulp.watch('app/*.html', browserSync.reload);
-  gulp.watch('app/*.php', browserSync.reload);
-  gulp.watch('app/js/**/*.js', browserSync.reload);
-});
-
-// Optimization Tasks 
-// ------------------
-
-// Optimizing CSS and JavaScript 
-gulp.task('useref', function() {
-
-  return gulp.src('app/*.php')
-    .pipe(useref())
-    .pipe(gulpIf('*.js', uglify()))
-    .pipe(gulpIf('*.css', cssnano()))
-    .pipe(gulp.dest('dist'));
-});
-
-// Optimizing Images 
-gulp.task('images', function() {
-  return gulp.src('app/img/**/*.+(png|jpg|jpeg|gif|svg)')
-    // Caching images that ran through imagemin
-    .pipe(cache(imagemin({
-      interlaced: true,
-    })))
-    .pipe(gulp.dest('dist/img'))
-});
-
-// Copying fonts 
-gulp.task('fonts', function() {
-  return gulp.src('app/fonts/**/*')
-    .pipe(gulp.dest('dist/fonts'))
-})
-
-// Cleaning 
-gulp.task('clean', function() {
-  return del.sync('dist').then(function(cb) {
-    return cache.clearAll(cb);
-  });
-})
-
-gulp.task('clean:dist', function() {
-  return del.sync(['dist/**/*', '!dist/img', '!dist/img/**/*']);
-});
-
-// Build Sequences
-// ---------------
-
-/*
-gulp.task('default', function(callback) {
-  runSequence(['sass', 'browserSync', 'watch'],
-    callback
-  )
-});
-*/
-
-gulp.task('default', function(callback) {
-  gulp.series(['connect-sync'],
-    callback
-  )
-});
-
-gulp.task('build', function(callback) {
-  gulp.series(
-    'clean:dist',
-    'sass',
-    ['useref', 'images', 'fonts'],
-    callback
-  )
-})
-
-//return a 
-gulp.task('message', function() {
-  return gulp.src('package.json')
-    .pipe(print(function() { return 'HTTP Server Started'; }));
-});
-
-
-gulp.task('deploy', function() {
-  
-  // Dirs and Files to sync
-  rsyncPaths = ['./dist/'];
-  
-  // Default options for rsync
-  rsyncConf = {
-    progress: true,
-    incremental: true,
-    relative: true,
-    emptyDirectories: true,
-    recursive: true,
-    clean: true,
-    exclude: [],
-  };
-  
-  // Staging
-  if (argv.production) {
-
-    rsyncConf.hostname = ''; // hostname
-    rsyncConf.username = ''; // ssh username
-    rsyncConf.destination = 'public_html'; // path where uploaded files go
-    rsyncConf.root = 'dist'; // where the root of the deployed files should be
-    
-  
-  // Missing/Invalid Target  
-  } else {
-    throwError('deploy', gutil.colors.red('Missing or invalid target'));
-  }
-  
-
-  // Use gulp-rsync to sync the files 
-  return gulp.src(rsyncPaths)
-  .pipe(gulpIf(
-      argv.production, 
-      prompt.confirm({
-        message: 'Heads Up! Are you SURE you want to push to PRODUCTION?',
-        default: false
-      })
-  ))
-  .pipe(rsync(rsyncConf));
-
-});
-
-
-function throwError(taskName, msg) {
-  throw new gutil.PluginError({
-      plugin: taskName,
-      message: msg
+    files.forEach(file => {
+        if(!fs.existsSync(file)) {
+            fs.writeFileSync(file, '');
+            console.log('file created:', file);    
+        }   
     });
+
+    return done();
 }
+
+// delete all assets in dist
+function cleanAssets(done) {
+    return del(
+        ['dist/**/*.html', 'dist/fonts/**/*', 'dist/img/**/*'], 
+        { force: true }
+    );
+}
+
+// publish HTML files src into dist
+function publishHtml(done) {
+  return gulp.src('src/**/*.html')
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('dist'));
+}
+
+// Copy all fonts from src/fonts into dist
+function publishFonts(done) {
+    return gulp.src('src/fonts/**/*')
+      .pipe(gulp.dest('dist/fonts'));
+}
+
+// Copy all images from src/img into dist
+function publishImages(done) {
+  return gulp.src('src/img/**/*')
+    .pipe(gulp.dest('dist/img'));
+}
+
+// compile SCSS files
+function compileScss(done) {
+    return gulp.src('src/scss/**/*.scss')
+      .pipe(sourcemaps.init())
+      .pipe(sass().on('error', sass.logError))
+      .pipe(autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false
+      }))
+    //   .pipe(csso())
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest('dist/css'));
+}
+
+
+
+// watch files
+function watchFiles(done) {
+  gulp.watch("src/**/*.html", gulp.series(publishHtml, reload));
+  gulp.watch("src/fonts/**/*", gulp.series(publishFonts, reload));
+  gulp.watch("src/img/**/*", gulp.series(publishImages, reload));
+  gulp.watch("src/scss/**/*.scss", gulp.series(compileScss, reload));
+}
+
+// browserSync server
+function serve(done) {
+    browsersync_server.init({
+        server: {
+            baseDir: './dist/'
+        }
+    });
+    done();
+}
+
+// browserSync reload
+function reload(done) {
+    browsersync_server.reload();
+    done();
+}
+
+// export tasks
+exports.structure = createStructure;
+exports.watch = gulp.series(cleanAssets, publishHtml, publishFonts, publishImages, compileScss, serve, watchFiles);

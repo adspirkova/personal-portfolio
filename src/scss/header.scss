@@ -1,10 +1,14 @@
 @import 'variables.scss';
 /****************************************  NAV BAR   ***************************************************/
-nav {
+header {
+    height: 30px;
+
+    nav {
     text-align: right;
     /* Sticky navbar by position and width (1-2)*/
     position: fixed; /* (1) */
     width: 100vw; /* (2) */
+    height: 30px;
     font-size: 1.25em;
     padding: 0 1em; /* Creates more spaces */
     line-height: 1em;
@@ -16,43 +20,44 @@ nav {
         margin: 0;
         padding: 0;
     }
-    ul {
-        list-style-type: none; /* Deletes bulets */
-        display: flex; /* Displays navbar as a row */
-        flex-direction: row;
-        justify-content: flex-end;
-        align-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 0 3em;  /* Moves ul from right side */
-        
-        @media screen and (max-width:$max-width){
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            padding: 0;
-            margin:0;
+        ul {
+            list-style-type: none; /* Deletes bulets */
+            display: flex; /* Displays navbar as a row */
+            flex-direction: row;
+            justify-content: flex-end;
+            align-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 3em;  /* Moves ul from right side */
+            
+            @media screen and (max-width:$max-width){
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 0;
+                margin:0;
+            }
+            .adelalogonav {
+                max-height: 3em; /* Max height of logo */
+                max-width: 3em; 
+            }
+    
+            a {
+                font-size: 1.25em;
+                padding: 0 1em; /* Creates more spaces */
+                text-decoration: none; /* avoids highligting hyperlinks */
+                line-height: 1em;
+                color: $color;
+    
+                a:hover {
+                    color: #94b0b7; /* changes color */
+                }
+            }
+            
         }
-        .adelalogonav {
-            max-height: 3em; /* Max height of logo */
-            max-width: 3em; 
-        }
-
-        a {
-            font-size: 1.25em;
-            padding: 0 1em; /* Creates more spaces */
-            text-decoration: none; /* avoids highligting hyperlinks */
-            line-height: 1em;
-            color: $color;
-
-            a:hover {
-                color: #94b0b7; /* changes color */
-              }
-        }
-        
     }
-
 }
+
 
 
 
